@@ -8,7 +8,11 @@
 ├── prompt/
 │
 ├── memory/
+|
+|
+├── security/
 │
+|
 ├── logs/
 │
 ├── tests/

@@ -303,7 +303,7 @@ Return     Return
 - **Rule-based Prompt Injection Detector**。
 
 
-### 具体架构
+### pipeline
 ```
  
               text
@@ -341,3 +341,35 @@ Return     Return
  
 
 ```
+
+
+
+## 当前版本
+# v2.2.0
+
+### 新增功能: Secret Mask (敏感信息脱敏)   数据安全,敏感信息隐藏
+
+
+### 相似的pipeline
+```
+mask_secret()
+        │
+        ▼
+遍历 SECRET_RULES
+        │
+        ▼
+Regex Match
+        │
+        ▼
+根据 mask_type 调度
+        │
+        ├── mask_phone()
+        ├── mask_email()
+        ├── mask_token()
+        └── mask_jwt()
+        │
+        ▼
+返回 SecurityResult
+```
+
+

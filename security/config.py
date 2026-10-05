@@ -56,3 +56,46 @@ INJECTION_RULES = {
 
 
 }
+
+
+
+
+
+
+SECRET_RULES = {
+    "phone": {
+        "pattern": r"1[3-9]\d{9}",
+        "mask_type": "phone",
+        "description": "Phone Number",
+    },
+
+    "email": {
+        "pattern": r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}",
+        "mask_type": "email",
+        "description": "Email Address",
+    },
+
+    "api key": {
+            "pattern": r"\b(d?sk-)[a-zA-Z0-9_-]+\b",
+            "mask_type": "token",
+            "description": "API Key",
+        },
+
+    "bearer token": {
+                "pattern":r"(?<=Bearer\s)[A-Za-z0-9\-\._~\+\/]+=*",
+                "mask_type": "bearer",
+                "description": "Bearer Token",
+            },
+
+    "JWT": {
+                "pattern":r"\beyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\b",
+                "mask_type": "jwt",
+                "description": "Json Web Token",
+            }
+    
+        
+
+
+
+
+}

@@ -43,3 +43,8 @@ def detect_prompt_injection(text: str) -> SecurityResult:
         reason=[],
         text=original_text  # 如果安全，建议返回 original_text，或者按你原代码返回 "" (视你的业务需求而定)
     )
+
+
+
+
+
