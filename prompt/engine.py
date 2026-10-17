@@ -18,10 +18,6 @@ class PromptEngine:
             version = PROMPT_VERSION,
             timestamp = datetime.now()
 
-
-
-
-
         )
 
     
