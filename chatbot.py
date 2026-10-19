@@ -47,7 +47,7 @@ def ai_answer(question):
 
 
     # ========= 第三步 =========
-    # 把聊天记录发送给glm
+    # 把聊天记录发送给ds
     try:
         prompt = run_pipeline(question)
         response = client.chat.completions.create(
@@ -70,7 +70,6 @@ def ai_answer(question):
         logging.error(
             f"DeepSeek API调用失败：{type(e).__name__} - {e}"
         )
-
         print("KK：抱歉，AI服务暂时不可用")
 
         return ""
@@ -104,7 +103,6 @@ def ai_answer(question):
         logging.error(
             f"保存聊天记录失败：{type(e).__name__} - {e}"
         )
-
     # ========= 第六步 =========
     # 返回AI回答
     return answer

@@ -1,5 +1,7 @@
 from .input_filter import check_input,SecurityResult
 from .injection import detect_prompt_injection
+from .masker import mask_secret
+from .risk import calculate_risk
 
 def run_security(text:str)  -> SecurityResult   :
 
@@ -39,25 +41,33 @@ def run_security(text:str)  -> SecurityResult   :
     """
 
     ## 输入的安全检查
-    result = check_input(text)
+    input_result = check_input(text)
 
 
-    if not result.safe:
-        return result
-    
+    if not input_result.safe:
+        return input_result
+
 
     ## 输入内容的安全检查
-    result = detect_prompt_injection(result.text)
+    injection_result = detect_prompt_injection(input_result.text)
 
     
-    if not result.safe:
-        return result
+    if not injection_result.safe:
+        return injection_result
 
+    mask_result = mask_secret(injection_result.text)
 
+    risk_result = calculate_risk(
+    input_result,
+    injection_result,
+    mask_result,
+)
 
 
     
-    return result
+    return risk_result
+
+
 
 
 

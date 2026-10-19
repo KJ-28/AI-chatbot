@@ -344,7 +344,7 @@ Return     Return
 
 
 
-## 当前版本
+
 # v2.2.0
 
 ### 新增功能: Secret Mask (敏感信息脱敏)   数据安全,敏感信息隐藏
@@ -373,3 +373,31 @@ Regex Match
 ```
 
 
+# v2.3.0 — Security Audit Log
+
+- Added Security Audit Log
+- JSONL log format
+- Structured logging
+- UTF-8 support
+- Audit pytest
+- 24 tests passed
+
+
+
+# v2.4.0 - Risk Engine
+
+### Added
+- Input Filter
+- Prompt Injection Detection
+- Secret Masking
+- Risk Engine
+- Audit Logger
+
+### Security
+- Risk Score
+- Risk Level
+- Pipeline
+
+### Test
+29 Passed
+100% Pass
