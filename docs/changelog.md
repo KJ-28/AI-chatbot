@@ -401,3 +401,26 @@ Regex Match
 ### Test
 29 Passed
 100% Pass
+
+
+# v2.5.0 — Docker Deployment
+## Added
+
+- Docker support
+- Dockerfile
+- .dockerignore
+- FastAPI production container
+- Uvicorn server support
+
+## Changed
+- Optimized project structure for container deployment
+- Updated requirements.txt
+
+## Tested
+- Docker image build
+- Docker container startup
+- FastAPI service available on localhost:8000
+- All tests passed (29/29)
+
+## Notes
+KK Chat can now be deployed consistently across different environments using Docker.

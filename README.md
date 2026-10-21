@@ -121,8 +121,23 @@ http://127.0.0.1:8000
 6. Stable Public API
 7. Low Coupling
 
+## Docker
+### Build Image
 
+```
+docker build -t kk-chat:v2.5
+```
 
+### Run Coun
+
+```
+docker run --env-file .env -p 8000:8000 kk-chat:v2.5
+```
+
+### Open
+```
+http://localhost:8000
+```
 
 ---
 
